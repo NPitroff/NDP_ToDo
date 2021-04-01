@@ -3,7 +3,7 @@ import React, { Component } from "react";
 // component
 import TodayList from "./Components/TodayList";
 
-class App extends Component() {
+class App extends Component {
   state = {
     tasks: [
       // default static data to hold while writing the app
