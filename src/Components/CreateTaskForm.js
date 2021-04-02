@@ -7,6 +7,8 @@ class CreateTaskForm extends Component {
   };
   render() {
     return (
+        <div>
+        // To input the title of the task
       <input
         type="text"
         placeholder="Title"
@@ -14,6 +16,13 @@ class CreateTaskForm extends Component {
           this.setState({ title: e.target.value });
         }}
       />
+    //   to enter the description of the task
+    <textarea 
+    placeholder="Describe your task!"
+    onChange ={e => {
+        this.setState({ detals: e.target.value });
+    }}/>
+    </div>
     );
   }
 }
