@@ -22,6 +22,7 @@ class CreateTaskForm extends Component {
     onChange ={e => {
         this.setState({ detals: e.target.value });
     }}/>
+    <input type="submit" value="Add a Task" />
     </div>
     );
   }
