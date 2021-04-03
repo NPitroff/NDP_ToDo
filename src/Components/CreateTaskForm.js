@@ -5,9 +5,12 @@ class CreateTaskForm extends Component {
     title: "",
     details: "",
   };
-  //
+  //method to add task to the todo list
   addTask = () => {
+    //   statement that forces you to add a title to a task before submitting
+      if(this.state.title) {
       this.props.addTask(this.state.title, this.state.details);
+      }
   };
 
   render() {
