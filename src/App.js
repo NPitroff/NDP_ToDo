@@ -18,6 +18,14 @@ class App extends Component {
       }
     ]
   }
+  // method to add tasks to the todo list
+  addTask = (title, details) => {
+    let newTask = { title: title, details: details };
+    let tasks = this.state.tasks;
+    tasks.push(newTask);
+    this.setState({ tasks: tasks })
+  };
+  
   render() {
 
     return (
