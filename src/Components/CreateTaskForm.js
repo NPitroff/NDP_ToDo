@@ -5,6 +5,11 @@ class CreateTaskForm extends Component {
     title: "",
     details: "",
   };
+  //
+  addTask = () => {
+      this.props.addTask(this.state.title, this.state.details);
+  };
+  
   render() {
     return (
         <div>
