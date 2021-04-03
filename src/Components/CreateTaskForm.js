@@ -9,11 +9,11 @@ class CreateTaskForm extends Component {
   addTask = () => {
       this.props.addTask(this.state.title, this.state.details);
   };
-  
+
   render() {
     return (
         <div>
-        // To input the title of the task
+        {/*  To input the title of the task */}
       <input
         type="text"
         placeholder="Title"
@@ -27,7 +27,7 @@ class CreateTaskForm extends Component {
     onChange ={e => {
         this.setState({ detals: e.target.value });
     }}/>
-    <input type="submit" value="Add a Task" />
+    <input type="submit" value="Create Task" onClick={this.addTask} />
     </div>
     );
   }
