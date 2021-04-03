@@ -25,12 +25,12 @@ class App extends Component {
     tasks.push(newTask);
     this.setState({ tasks: tasks })
   };
-  
+
   render() {
 
     return (
       <div className="App">
-        <CreateTaskForm />
+        <CreateTaskForm addTask = {this.addTask} />
       <TodayList tasks={this.state.tasks} />
       </div>
     );
