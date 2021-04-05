@@ -10,6 +10,8 @@ class CreateTaskForm extends Component {
     //   statement that forces you to add a title to a task before submitting
       if(this.state.title) {
       this.props.addTask(this.state.title, this.state.details);
+    //   when changing the values in the inputs, the state will reset and trigger a re-render of the site.
+      this.setState({ title: "", details: "" })
       }
   };
 
@@ -20,13 +22,15 @@ class CreateTaskForm extends Component {
       <input
         type="text"
         placeholder="Title"
+        value={this.state.title}
         onChange={(e) => {
           this.setState({ title: e.target.value });
         }}
       />
-    //   to enter the description of the task
+    {/*  to enter the description of the task */}
     <textarea 
     placeholder="Describe your task!"
+    value={this.state.details}
     onChange ={e => {
         this.setState({ detals: e.target.value });
     }}/>
@@ -35,6 +39,5 @@ class CreateTaskForm extends Component {
     );
   }
 }
-// I love coding!
 
 export default CreateTaskForm;
