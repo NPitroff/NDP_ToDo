@@ -32,7 +32,7 @@ class CreateTaskForm extends Component {
     placeholder="Describe your task!"
     value={this.state.details}
     onChange ={e => {
-        this.setState({ detals: e.target.value });
+        this.setState({ details: e.target.value });
     }}/>
     <input type="submit" value="Create Task" onClick={this.addTask} />
     </div>
