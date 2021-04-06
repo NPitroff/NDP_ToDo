@@ -18,13 +18,25 @@ class App extends Component {
       }
     ]
   }
+  
+  // method to stringify the todo lists and save to local storage
+  updateLocalStorage = () => {
+    let tasks = JSON.stringify({
+      tasks: this.state.tasks
+    });
+    localStorage.setItem("tasks", tasks);
+  };
+
   // method to add tasks to the todo list
   addTask = (title, details) => {
     let newTask = { title: title, details: details };
     let tasks = this.state.tasks;
     tasks.push(newTask);
     this.setState({ tasks: tasks })
+    // method call to save to local storage
+    this.updateLocalStorage();
   };
+  
 
   render() {
 
