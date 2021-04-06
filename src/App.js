@@ -44,6 +44,11 @@ class App extends Component {
     // method call to save to local storage
     this.updateLocalStorage();
   };
+
+  // method to call the retrieveFromLocalStorage method on page load
+  componentDidMount() {
+    this.retrieveFromLocalStorage();
+  }
   
 
   render() {
