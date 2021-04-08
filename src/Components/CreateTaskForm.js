@@ -1,9 +1,11 @@
 import React, { Component } from "react";
+import Datetime from "react-datetime";
 
 class CreateTaskForm extends Component {
   state = {
     title: "",
     details: "",
+    due:""
   };
   //method to add task to the todo list
   addTask = () => {
@@ -34,6 +36,13 @@ class CreateTaskForm extends Component {
     onChange ={e => {
         this.setState({ details: e.target.value });
     }}/>
+    <Datetime 
+        defaultValue="Optional Due Date"
+        value={this.state.due}
+        onChange={momentObj => {
+            this.setState({ due: momentObj });
+        }}
+    />
     <input type="submit" value="Create Task" onClick={this.addTask} />
     </div>
     );
