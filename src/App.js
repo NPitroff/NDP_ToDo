@@ -33,6 +33,9 @@ class App extends Component {
   retrieveFromLocalStorage = () => {
     let tasks = JSON.parse(localStorage.getItem("tasks"));
     if (tasks) {
+      tasks.tasks.forEach(task => {
+        if (task.due) task.due = moment(task.due);
+    })
       this.setState({ tasks: tasks.tasks });
     }
   };
