@@ -13,9 +13,9 @@ class CreateTaskForm extends Component {
   addTask = () => {
     //   statement that forces you to add a title to a task before submitting
       if(this.state.title) {
-      this.props.addTask(this.state.title, this.state.details);
+      this.props.addTask(this.state.title, this.state.details, this.state.due);
     //   when changing the values in the inputs, the state will reset and trigger a re-render of the site.
-      this.setState({ title: "", details: "" })
+      this.setState({ title: "", details: "", due:"" })
       }
   };
 
