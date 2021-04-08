@@ -18,7 +18,8 @@ class App extends Component {
         details: "Start your first day with a hot coffee!",
         due: moment()
       }
-    ]
+    ],
+    futureTasks: []
   }
 
   // method to stringify the todo lists and save to local storage
@@ -35,7 +36,7 @@ class App extends Component {
     if (tasks) {
       tasks.tasks.forEach(task => {
         if (task.due) task.due = moment(task.due);
-    })
+    });
       this.setState({ tasks: tasks.tasks });
     }
   };
