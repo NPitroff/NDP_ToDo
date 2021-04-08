@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-
+import moment from "moment";
 // component
 import TodayList from "./Components/TodayList";
 import CreateTaskForm from "./Components/CreateTaskForm";
@@ -10,11 +10,13 @@ class App extends Component {
       // default static data to hold while writing the app
       {
         title: "Drink a Smoothie",
-        details: "Prepare a blueberry smoothie."
+        details: "Prepare a blueberry smoothie.",
+        due: moment()
       },
       {
         title: "Get my coffee and head to work",
-        details: "Start your first day with a hot coffee!"
+        details: "Start your first day with a hot coffee!",
+        due: moment()
       }
     ]
   }
