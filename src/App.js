@@ -44,11 +44,13 @@ class App extends Component {
   // method to add tasks to the todo list
   addTask = (title, details, due) => {
     let newTask = { title: title, details: details, due: due };
-    let tasks = this.state.tasks;
+    if (due && due.isAfter(moment(), "day")) {
+    let tasks = this.state.futureTasks;
     tasks.push(newTask);
     this.setState({ tasks: tasks })
     // method call to save to local storage
     this.updateLocalStorage();
+    }
   };
 
   // method to call the retrieveFromLocalStorage method on page load
