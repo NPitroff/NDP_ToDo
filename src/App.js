@@ -47,7 +47,7 @@ class App extends Component {
     if (due && due.isAfter(moment(), "day")) {
     let tasks = this.state.futureTasks;
     tasks.push(newTask);
-    this.setState({ tasks: tasks })
+    this.setState({ futureTasks: tasks })
     // method call to save to local storage
     this.updateLocalStorage();
     }
