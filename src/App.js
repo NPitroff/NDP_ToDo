@@ -48,9 +48,14 @@ class App extends Component {
     let tasks = this.state.futureTasks;
     tasks.push(newTask);
     this.setState({ futureTasks: tasks })
+    } else {
+      let tasks = this.state.tasks;
+      tasks.push(newTask);
+      this.setState({ tasks: tasks })
+    }
     // method call to save to local storage
     this.updateLocalStorage();
-    }
+    
   };
 
   // method to call the retrieveFromLocalStorage method on page load
