@@ -3,6 +3,7 @@ import moment from "moment";
 // component
 import TodayList from "./Components/TodayList";
 import CreateTaskForm from "./Components/CreateTaskForm";
+import FutureList from "./Components/FutureList";
 
 class App extends Component {
   state = {
@@ -70,6 +71,7 @@ class App extends Component {
       <div className="App">
         <CreateTaskForm addTask = {this.addTask} />
       <TodayList tasks={this.state.tasks} />
+      <FutureList tasks={this.state.futureTasks} />
       </div>
     );
   }
