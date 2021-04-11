@@ -39,7 +39,13 @@ class App extends Component {
       tasks.tasks.forEach(task => {
         if (task.due) task.due = moment(task.due);
     });
-      this.setState({ tasks: tasks.tasks });
+    tasks.futureTasks.forEach(task => {
+      if (task.due) task.due = moment(task.due);
+    });
+      this.setState({ 
+        tasks: tasks.tasks,
+        futureTasks: tasks.futureTasks 
+      });
     }
   };
 
