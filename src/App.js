@@ -6,20 +6,19 @@ import CreateTaskForm from "./Components/CreateTaskForm";
 import FutureList from "./Components/FutureList";
 
 class App extends Component {
-  
+
   // method to call the retrieveFromLocalStorage method on page load
   componentDidMount() {
     this.retrieveFromLocalStorage();
-  }
-  
+  }  
 
   render() {
 
     return (
       <div className="App">
-        <CreateTaskForm addTask = {this.addTask} />
-      <TodayList tasks={this.state.tasks} />
-      <FutureList tasks={this.state.futureTasks} />
+        <CreateTaskForm />
+        <TodayList  />
+        <FutureList />
       </div>
     );
   }
