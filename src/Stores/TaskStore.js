@@ -43,6 +43,23 @@ addTask = (title, details, due) => {
     localStorage.setItem("tasks", tasks);
   };
 
+  // method to parse the JSON data from local storage and back into objects
+  retrieveFromLocalStorage = () => {
+    let tasks = JSON.parse(localStorage.getItem("tasks"));
+    if (tasks) {
+      tasks.tasks.forEach(task => {
+        if (task.due) task.due = moment(task.due);
+    });
+    tasks.futureTasks.forEach(task => {
+      if (task.due) task.due = moment(task.due);
+    });
+      this.setState({ 
+        tasks: tasks.tasks,
+        futureTasks: tasks.futureTasks 
+      });
+    }
+  };
+
 const tasksStore = new TasksStore();
 
 export default tasksStore;
