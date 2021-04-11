@@ -16,6 +16,11 @@ class TasksStore {
     ];
       futureTasks = [];
 }
+// makes UI re-render when data is modified
+decorate(TasksStore, {
+    tasks: observable,
+    futureTasks: observable
+  });
 
 // method to add tasks to the todo list
 addTask = (title, details, due) => {
