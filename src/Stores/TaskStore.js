@@ -1,7 +1,7 @@
 import react from "react";
 
 class TasksStore {
-    tasks: [
+    tasks = [
         // default static data to hold while writing the app
         {
           title: "Drink a Smoothie",
@@ -13,21 +13,21 @@ class TasksStore {
           details: "Start your first day with a hot coffee!",
           due: moment()
         }
-      ],
-      futureTasks: []
+    ];
+      futureTasks = [];
 }
 
 // method to add tasks to the todo list
 addTask = (title, details, due) => {
     let newTask = { title: title, details: details, due: due };
     if (due && due.isAfter(moment(), "day")) {
-    let tasks = this.state.futureTasks;
+    let tasks = this.futureTasks;
     tasks.push(newTask);
-    this.setState({ futureTasks: tasks })
+    this.futureTasks = tasks
     } else {
-      let tasks = this.state.tasks;
+      let tasks = this.tasks;
       tasks.push(newTask);
-      this.setState({ tasks: tasks })
+      this.tasks = tasks
     }
     // method call to save to local storage
     this.updateLocalStorage();
@@ -37,8 +37,8 @@ addTask = (title, details, due) => {
   // method to stringify the todo lists and save to local storage
   updateLocalStorage = () => {
     let tasks = JSON.stringify({
-      tasks: this.state.tasks,
-      futureTasks: this.state.tasks
+      tasks: this.tasks,
+      futureTasks: this.tasks
     });
     localStorage.setItem("tasks", tasks);
   };
@@ -53,7 +53,7 @@ addTask = (title, details, due) => {
     tasks.futureTasks.forEach(task => {
       if (task.due) task.due = moment(task.due);
     });
-      this.setState({ 
+      this({ 
         tasks: tasks.tasks,
         futureTasks: tasks.futureTasks 
       });
