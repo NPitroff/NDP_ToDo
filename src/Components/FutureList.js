@@ -17,4 +17,4 @@ class FutureList extends Component {
     }
 }
 // for the first commit
-export default FutureList;
+export default observer(FutureList);

@@ -53,4 +53,4 @@ class CreateTaskForm extends Component {
   }
 }
 
-export default CreateTaskForm;
+export default observer(CreateTaskForm);

@@ -17,4 +17,4 @@ class TodayList extends Component {
     }
 }
 // for the first commit
-export default TodayList;
+export default observer(TodayList);

@@ -16,4 +16,4 @@ class Task extends Component {
 }
 // reset this commit
 
-export default Task;
+export default observer(Task);

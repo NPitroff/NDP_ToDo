@@ -1,4 +1,4 @@
-import react from "react";
+import React from "react";
 import { decorate, observable } from "mobx";
 import moment from "moment";
 
