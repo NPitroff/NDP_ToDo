@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import tasksStore from "../Stores/TasksStore";
+import { observer } from "mobx-react";
 
 // components
 import Task from "./Task"

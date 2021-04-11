@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import tasksStore from "../Stores/TasksStore";
+import { observer } from "mobx-react";
 
 class Task extends Component {
     render() {

@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import Datetime from "react-datetime";
+import tasksStore from "../Stores/TasksStore";
+import { observer } from "mobx-react";
 //import css
 import "../DatetimePicker.css";
 
