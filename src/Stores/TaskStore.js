@@ -34,6 +34,15 @@ addTask = (title, details, due) => {
     
   };
 
+  // method to stringify the todo lists and save to local storage
+  updateLocalStorage = () => {
+    let tasks = JSON.stringify({
+      tasks: this.state.tasks,
+      futureTasks: this.state.tasks
+    });
+    localStorage.setItem("tasks", tasks);
+  };
+
 const tasksStore = new TasksStore();
 
 export default tasksStore;
