@@ -4,12 +4,13 @@ import moment from "moment";
 import TodayList from "./Components/TodayList";
 import CreateTaskForm from "./Components/CreateTaskForm";
 import FutureList from "./Components/FutureList";
+import tasksStore from "./Stores/TasksStore";
 
 class App extends Component {
 
   // method to call the retrieveFromLocalStorage method on page load
   componentDidMount() {
-    this.retrieveFromLocalStorage();
+    tasksStore.retrieveFromLocalStorage();
   }  
 
   render() {
