@@ -1,3 +1,5 @@
+import react from "react";
+
 class TasksStore {
     tasks: [
         // default static data to hold while writing the app
@@ -14,6 +16,23 @@ class TasksStore {
       ],
       futureTasks: []
 }
+
+// method to add tasks to the todo list
+addTask = (title, details, due) => {
+    let newTask = { title: title, details: details, due: due };
+    if (due && due.isAfter(moment(), "day")) {
+    let tasks = this.state.futureTasks;
+    tasks.push(newTask);
+    this.setState({ futureTasks: tasks })
+    } else {
+      let tasks = this.state.tasks;
+      tasks.push(newTask);
+      this.setState({ tasks: tasks })
+    }
+    // method call to save to local storage
+    this.updateLocalStorage();
+    
+  };
 
 const tasksStore = new TasksStore();
 
