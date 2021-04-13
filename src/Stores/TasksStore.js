@@ -70,3 +70,5 @@ addTask = (title, details, due) => {
 const tasksStore = new TasksStore();
 
 export default tasksStore;
+
+// find error with mobx
