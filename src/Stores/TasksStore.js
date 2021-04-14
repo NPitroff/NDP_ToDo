@@ -1,5 +1,5 @@
 import React from "react";
-import { decorate, observable } from "mobx";
+import { makeObservable, observable } from "mobx";
 import moment from "moment";
 
 class TasksStore {
@@ -19,7 +19,7 @@ class TasksStore {
       futureTasks = [];
 }
 // makes UI re-render when data is modified
-decorate(TasksStore, {
+makeObservable(TasksStore, {
     tasks: observable,
     futureTasks: observable
   });
