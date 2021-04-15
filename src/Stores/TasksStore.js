@@ -1,6 +1,10 @@
 import React from "react";
 import { makeObservable, observable } from "mobx";
 import moment from "moment";
+// components
+import TodayList from "../Components/TodayList";
+import CreateTaskForm from "../Components/CreateTaskForm";
+import FutureList from "../Components/FutureList"
 
 class TasksStore {
     tasks = [
@@ -17,7 +21,7 @@ class TasksStore {
         }
     ];
       futureTasks = [];
-}
+
 // makes UI re-render when data is modified
 makeObservable(TasksStore, {
     tasks: observable,
@@ -66,9 +70,8 @@ addTask = (title, details, due) => {
       });
     }
   };
-
+}
 const tasksStore = new TasksStore();
 
 export default tasksStore;
 
-// find error with mobx
