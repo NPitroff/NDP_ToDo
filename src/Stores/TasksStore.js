@@ -75,3 +75,4 @@ const tasksStore = new TasksStore();
 
 export default tasksStore;
 
+// Check to see if app runs correctly
